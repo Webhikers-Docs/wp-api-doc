@@ -70,7 +70,7 @@ axios.get('https://domain.com/wp-json/wp/v2/:post_type_name/:post_id')
 
 #### 4. POST form submission
 
-...will be added asap.
+You can find a tutorial how to post form submissions for our prjojects [here](https://github.com/Webhikers/bootstrap-vue-cf7)
 
 ## Making Requests
 
