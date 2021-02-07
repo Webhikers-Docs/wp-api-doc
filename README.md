@@ -94,6 +94,36 @@ api.get('https://domain.com/wp-json/wp/v2/:post_type_name/:post_id')
   })
 ```
 
-#### 4. POST form submission
+#### 4. Add meta data to the head of each page and post. 
+
+```vue
+<template>
+  <section>
+    <h1>This is a pge</h1>
+  </section>
+</template>
+
+<script lang="js">
+
+  import api from 'path/to/api/helper-script.js'
+
+  export default{
+    asyncData:async function(){      
+      var page = api.get('https://domain.com/wp-json/wp/v2/pages/:page_id')      
+      return {page}      
+    },
+    head() {
+      return {
+        title: this.page.yoast_title,
+        meta: this.page.yoast_meta
+      }
+    }
+
+  }
+</script>
+
+```
+
+#### 5. POST form submission
 
 You can find a tutorial how to post form submissions for our prjojects [here](https://github.com/Webhikers/bootstrap-vue-cf7)
