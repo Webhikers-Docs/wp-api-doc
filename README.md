@@ -13,7 +13,7 @@ You can find the helper script [here](https://github.com/Webhikers/wp-api-doc/bl
 
 ```javascript
 
-import api from 'path/to/api/helper-snippet.js'
+import api from 'path/to/api/helper-script.js'
 
 var response = api.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
 
@@ -28,7 +28,7 @@ Content data will be found in `response.data.acf`
 
 ```javascript
 
-import api from 'path/to/api/helper-snippet.js'
+import api from 'path/to/api/helper-script.js'
 
 // Make a request for a page with a given ID
 // The dynamic content comes sorted in page sections, like the following
@@ -49,7 +49,7 @@ Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
-import api from 'path/to/api/helper-snippet.js'
+import api from 'path/to/api/helper-script.js'
 
 // Make a request for a page with a given ID
 // Here the pages only have title and content, so the results will be like the following
@@ -67,7 +67,7 @@ Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
-import api from 'path/to/api/helper-snippet.js'
+import api from 'path/to/api/helper-script.js'
 
 // Make a request for all posts of a certain post_type
 api.get('https://domain.com/wp-json/wp/v2/:post_type_name')
@@ -82,7 +82,7 @@ Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
-import api from 'path/to/api/helper-snippet.js'
+import api from 'path/to/api/helper-script.js'
 
 // Make a request for a post with a given ID
 // The posts only have title and content, so the results will be like the following
