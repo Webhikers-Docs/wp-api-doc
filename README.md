@@ -6,7 +6,7 @@ This is a short documentation how to integrate Nuxt.js or Vue.js projects with t
 
 #### 1. GET `Normal Page` (all pages, excluding impressum, privacy, cookies, terms)
 
-Conent data will be found in `response.data.acf`
+Content data will be found in `response.data.acf`
 
 ```javascript
 
@@ -27,7 +27,7 @@ axios.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
 
 #### 2. GET `Legal Page` (legal pages like impressum, privacy, cookies, terms, excluding all other pages)
 
-Conent data will be found in `response.data.title` and `response.data.content`
+Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
@@ -45,7 +45,7 @@ axios.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
 
 #### 3. GET posts
 
-Conent data will be found in `response.data.title` and `response.data.content`
+Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
@@ -60,7 +60,7 @@ axios.get('https://domain.com/wp-json/wp/v2/:post_type_name')
 
 #### 3. GET post
 
-Conent data will be found in `response.data.title` and `response.data.content`
+Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
