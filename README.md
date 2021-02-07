@@ -6,7 +6,7 @@ This is a short documentation how to fetch data from `WordPress` sites of our cl
 
 1. Please fill all pages with the dynamic content from the server
 2. Please fill all posts and single posts with dynamic content from the server
-3. Please add meta data from the server to each page and every post.
+3. Please add meta data from the server to the head of each page and every post. You can find a short info [below](#meta-data).
 
 ## Making Requests
 
@@ -99,6 +99,8 @@ api.get('https://domain.com/wp-json/wp/v2/:post_type_name/:post_id')
     console.log(response.data.content.rendered);
   })
 ```
+
+<a name="meta-data"/>
 
 #### 4. Add meta data to the head of each page and post. 
 
