@@ -2,6 +2,12 @@
 
 This is a short documentation how to fetch data from `WordPress` sites of our clients into `Nuxt.js` or `Vue.js` projects.
 
+## Required Tasks
+
+1. Please fill all pages with the dynamic content from the server
+2. Please fill all posts and single posts with dynamic content from the server
+3. Please add meta data from the server to each page and every post.
+
 ## Making Requests
 
 When fetching data from the `WordPress REST API`, we need to convert HTML entities like Ä, Ö, Ü and other special charakters. 
