@@ -1,6 +1,6 @@
 # Connect WordPress API
 
-This is a short documentation to let you know how to integrate our Nuxt.js or Vue.js projects with the WordPress Sites of our clients.
+This is a short documentation how to integrate our Nuxt.js or Vue.js projects with the WordPress Sites of our clients.
 
 ## Endpoints
 
