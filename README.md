@@ -201,7 +201,6 @@ You can then make requests like this:
 
 import api from 'path/to/api/helper-snippet.js'
 
-
 var response = api.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
 
 ```
