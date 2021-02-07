@@ -4,7 +4,9 @@ This is a short documentation to let you know how to integrate our Nuxt.js or Vu
 
 ## Endpoints
 
-#### 1. GET Normal Page (all pages, excluding impressum, privacy, cookies, terms)
+#### 1. GET `Normal Page` (all pages, excluding impressum, privacy, cookies, terms)
+
+Conent data will be found in `response.data.acf`
 
 ```javascript
 
@@ -23,7 +25,9 @@ axios.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
   })
 ```
 
-#### 2. GET Legal Page (legal pages like impressum, privacy, cookies, terms, excluding all other pages)
+#### 2. GET `Legal Page` (legal pages like impressum, privacy, cookies, terms, excluding all other pages)
+
+Conent data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
@@ -41,6 +45,8 @@ axios.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
 
 #### 3. GET posts
 
+Conent data will be found in `response.data.title` and `response.data.content`
+
 ```javascript
 
 const axios = require('axios');
@@ -53,6 +59,8 @@ axios.get('https://domain.com/wp-json/wp/v2/:post_type_name')
 ```
 
 #### 3. GET post
+
+Conent data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
@@ -78,7 +86,7 @@ We are using [axios](https://www.npmjs.com/package/axios) to fetch data from Wor
 
 We also need to convert HTML entities like Ä, Ö, Ü and other special charakters. Therefore we use [HE](https://www.npmjs.com/package/he) NPM library. It's not the most beautiful solution, but we haven't found a better one yet.
 
-You can use this Snippet as a Nuxt Plugin, if you want. If you have a better alternative, you're weclome to let us know and deliver a better solution to make WordPress API Requests.
+You can use this Snippet as a `Nuxt.js` or `Vue.js` Plugin, if you want. If you have a better alternative, you're weclome to let us know and deliver a better solution to make WordPress API Requests.
 
 ```javascript
 import axios from 'axios'
@@ -182,9 +190,18 @@ class Api{
 
 }
 
-export default (context, inject) => {
-  inject('apiService', new Api(context))
-}
+export default new Api()
 
+
+```
+
+You can then make requests like this:
+
+```javascript
+
+import api from 'path/to/api/helper-snippet.js'
+
+
+var response = api.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
 
 ```
