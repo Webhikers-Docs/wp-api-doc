@@ -7,7 +7,7 @@ This is a short documentation how to fetch data from `WordPress` sites of our cl
 When fetching data from the `WordPress REST API`, we need to convert HTML entities like Ä, Ö, Ü and other special charakters. 
 So, we are using [axios](https://www.npmjs.com/package/axios) to fetch the data and [HE](https://www.npmjs.com/package/he) to convert HTML entities in the response. It's not the most beautiful solution, but we haven't found a better one yet.
 
-In order to prevent you from re-enventing the wheel, wo wrote a little [`api` helper script] (https://github.com/Webhikers/wp-api-doc/blob/main/api.js), that enables you to make api calls without having to bother about HTML entities. Simply make the request and use the data.
+In order to prevent you from re-enventing the wheel, wo wrote a little [`api` helper script](https://github.com/Webhikers/wp-api-doc/blob/main/api.js), that enables you to make api calls without having to bother about HTML entities. Simply make the request and use the data.
 
 You can find the helper script [here](https://github.com/Webhikers/wp-api-doc/blob/main/api.js) and then you can then make requests like this:
 
