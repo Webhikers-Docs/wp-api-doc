@@ -6,7 +6,7 @@ This is a short documentation how to fetch data from `WordPress` sites of our cl
 
 1. Please fill all pages with the dynamic content from the server
 2. Please fill all posts and single posts with dynamic content from the server
-3. Please add meta data from the server to the head of each page and every post. You can find a short info [below](#meta-data).
+3. Only for `Nuxt.js` projects: Please add meta data from the server to the head of each page and every post. You can find a short info [below](#meta-data).
 
 ## Making Requests
 
