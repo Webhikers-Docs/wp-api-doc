@@ -13,11 +13,63 @@ This is a short documentation how to fetch data from `WordPress` sites of our cl
 When fetching data from the `WordPress REST API`, we need to convert HTML entities like Ä, Ö, Ü and other special charakters. 
 So, we are using [axios](https://www.npmjs.com/package/axios) to fetch the data and [HE](https://www.npmjs.com/package/he) to convert HTML entities in the response. It's not the most beautiful solution, but we haven't found a better one yet.
 
-In order to prevent you from re-enventing the wheel, wo wrote a little [`api` helper script](https://github.com/Webhikers/wp-api-doc/blob/main/api.js), that enables you to make api calls without having to bother about HTML entities. Simply make the request and use the data.
+In order to prevent you from re-enventing the wheel, we wrote a little [`api` nuxt plugin](https://github.com/Webhikers/wp-api-doc/blob/main/api.js), that enables you to make api calls without having to bother about HTML entities. Simply make the request and use the data.
 
-You can find the helper script [here](https://github.com/Webhikers/wp-api-doc/blob/main/api.js) and then you can then make requests like this:
+You can find the nuxt plugin [here](https://github.com/Webhikers/wp-api-doc/blob/main/api.js) and then you can then make requests like this:
 
+The Plugin code has been refactored recently and is **not tested yet**. If it doesn't work correctly, please let us know and we'll add a fix immediately.
+
+1. Install nuxt axios
+```bash
+npm install @nuxtjs/axios
+```
+
+2. Set the base_url
 ```javascript
+export default{
+  axios:{
+    baseURL:'https://admin.forrestbottle.com/wp-json',
+  },
+}
+```
+
+3. Install our nuxt api plugin
+In `nuxt.config.js`
+```javascript
+export default{
+  plugins: [
+    '@/plugins/api',
+  ],
+}
+```
+
+4. Use the plugin (always fetch api data in the `asyncData`) hook.
+
+In a `Nuxt.js` **Page**
+```vue
+<script>
+  export default{
+    asyncData({$apiService}){
+      var page = $apiService.get('/pages/:page_id')
+    }
+  }
+</script>
+```
+
+In a `Nuxt.js` **Component**
+```vue
+<script>
+  export default{
+    methods:{
+      do_somehting:function(){
+        var page = this.$apiService.get('/pages/:page_id')      
+      }
+    },
+  }
+</script>
+```
+
+
 
 import api from 'path/to/api/helper-script.js'
 
