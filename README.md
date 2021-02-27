@@ -98,12 +98,10 @@ Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
-import api from 'path/to/api/helper-script.js'
-
 // Make a request for a page with a given ID
 // Here the pages only have title and content, so the results will be like the following
 
-api.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
+$apiService.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
   .then(function (response) {
     console.log(response.data.title.rendered);
     console.log(response.data.content.rendered);
@@ -116,10 +114,8 @@ Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
-import api from 'path/to/api/helper-script.js'
-
 // Make a request for all posts of a certain post_type
-api.get('https://domain.com/wp-json/wp/v2/:post_type_name')
+$apiService.get('https://domain.com/wp-json/wp/v2/:post_type_name')
   .then(function (response) {
       var posts = response.data
   })
@@ -131,12 +127,10 @@ Content data will be found in `response.data.title` and `response.data.content`
 
 ```javascript
 
-import api from 'path/to/api/helper-script.js'
-
 // Make a request for a post with a given ID
 // The posts only have title and content, so the results will be like the following
 
-api.get('https://domain.com/wp-json/wp/v2/:post_type_name/:post_id')
+$apiService.get('https://domain.com/wp-json/wp/v2/:post_type_name/:post_id')
   .then(function (response) {
     console.log(response.data.title.rendered);
     console.log(response.data.content.rendered);
@@ -156,11 +150,9 @@ api.get('https://domain.com/wp-json/wp/v2/:post_type_name/:post_id')
 
 <script lang="js">
 
-  import api from 'path/to/api/helper-script.js'
-
   export default{
-    asyncData:async function(){      
-      var page = api.get('https://domain.com/wp-json/wp/v2/pages/:page_id')      
+    asyncData:async function({$apiService}){      
+      var page = $apiService.get('https://domain.com/wp-json/wp/v2/pages/:page_id')      
       return {page}      
     },
     head() {
