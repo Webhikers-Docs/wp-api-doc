@@ -69,15 +69,6 @@ In a `Nuxt.js` **Component**
 </script>
 ```
 
-
-
-import api from 'path/to/api/helper-script.js'
-```javascript
-var response = api.get('https://domain.com/wp-json/wp/v2/pages/:page_id')
-
-```
-If you're using our [Api helper script](https://github.com/Webhikers/wp-api-doc/blob/main/api.js), please make sure to configure the `axios baseURL`, so you don't have to declare it again and again for every single api call.
-
 ## Endpoints
 
 #### 1. GET `Normal Page` (all pages, excluding impressum, privacy, cookies, terms)
