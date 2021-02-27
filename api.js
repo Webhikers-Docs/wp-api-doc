@@ -7,11 +7,13 @@ class ApiService{
   }
 
   async get(endpoint, body){
-
-    var data = this.context.app.i18n._vm._data
-    var locale = data.locale
-    locale = body && body.lang ? body.lang : locale
-    body = body ? Object.assign(body, {lang:locale}) : {lang:locale}
+    
+    if(this.context.app.i18n){
+      var data = this.context.app.i18n._vm._data
+      var locale = data.locale
+      locale = body && body.lang ? body.lang : locale
+      body = body ? Object.assign(body, {lang:locale}) : {lang:locale}
+    }
 
     var new_url = endpoint
 
